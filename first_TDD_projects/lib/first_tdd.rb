@@ -21,3 +21,17 @@ class Array
   end
 
 end
+
+def my_transpose(arr)
+  transposed = []
+
+  arr.each_with_index do |ele, i|
+    row = []
+    (0...arr.length).each do |j|
+      row << arr[j][i]
+    end
+    transposed << row
+  end
+
+  transposed
+end
