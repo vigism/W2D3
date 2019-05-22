@@ -53,3 +53,20 @@ def stock_picker(arr)
 
   highest_pair
 end
+
+# until won
+# prompt source
+# start = gets.chomp #1
+
+# prompt for destination
+# end= gets.chjomp # []
+
+
+# until won?()
+#   move(start,end)
+#     var = start.shift # 1
+#     if end.empty? || end[0] > start 
+#       end.unshift(var)
+#     end
+#   end
+# end

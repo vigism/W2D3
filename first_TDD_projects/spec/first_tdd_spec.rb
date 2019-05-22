@@ -98,3 +98,41 @@ describe "#stock_picker" do
     end
   end
 end
+
+describe TowersOfHanoi do 
+  let(:pile1) {[2,3]}
+  let(:pile2) {[1]}
+  let(:pile3) {[]}
+  describe "#move" do 
+    context "when user enters input" do 
+      it "should not pick from empty pile" do
+        expect(move(3,2)).to eq(nil)
+      end
+
+      it "should not try to move into the same pile" do
+        expect(move(2,2)).to eq(nil)
+      end
+
+      it "should not try to move bigger ring onto smaller ring" do 
+        expect(move(1,2)).to eq(nil)
+      end
+
+      it "should be in range" do
+        expect(move(1,23)).to eq(nil)
+      end
+
+      it "is legal move" do
+        move(1,3)
+        expect(pile3).to eq([2])
+      end
+    end
+  end
+
+end
+
+
+# start cannot be empty
+# end position cannot be same as start position
+# start ring has to be less than the first element of end
+#index in range
+
