@@ -35,3 +35,21 @@ def my_transpose(arr)
 
   transposed
 end
+
+def stock_picker(arr)
+  highest_pair = []
+  highest = 0
+  
+  (0...arr.length - 1).each do |i|
+    (i+1...arr.length).each do |j|
+      cur = arr[j] - arr[i]
+
+      if cur > highest
+        highest = cur
+        highest_pair = [ i, j ]
+      end
+    end
+  end
+
+  highest_pair
+end

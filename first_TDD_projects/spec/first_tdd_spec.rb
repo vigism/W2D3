@@ -77,6 +77,24 @@ describe "#my_transpose" do
     [6, 7, 8]
     ])).to eq([[0, 3, 6],[1, 4, 7],[2, 5, 8]])
   end
+end
 
+describe "#stock_picker" do
+  context "when there is no profit to be made" do
+    it "should return an empty array" do
+      expect(stock_picker([10,9,8,7,6,5])).to eq([])
+    end
+  end
 
+  context "when input array is empty" do 
+    it "should return empty array" do
+      expect(stock_picker([])).to eq([])
+    end
+  end
+
+  context "when price goes up and down" do
+    it "should return highest profit pair" do
+      expect(stock_picker([1, 10, 12, 9, 13, 4, 25])).to eq([0,6])
+    end
+  end
 end
